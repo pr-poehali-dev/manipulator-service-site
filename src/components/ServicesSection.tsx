@@ -59,6 +59,10 @@ const ServicesSection = () => {
             использованием манипуляторов в Клину, Клинском районе с доставкой в
             Москву и другие направления
           </p>
+          <p className="text-md text-manipulator-gray-dark max-w-3xl mx-auto mt-2">
+            Выполняем заказы по всему Клинскому району с доставкой в любые
+            направления, включая центр Москвы
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
