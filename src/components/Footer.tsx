@@ -88,31 +88,99 @@ const Footer = () => {
               Контакты
             </h3>
             <ul className="space-y-2">
-              <li className="flex items-center">
+              <li className="flex items-start">
                 <Icon
                   name="Phone"
                   size={16}
-                  className="text-manipulator-secondary mr-2"
+                  className="text-manipulator-secondary mr-2 mt-1"
                 />
-                <div className="flex flex-col">
-                  <a
-                    href="tel:+89253645581"
-                    className="text-gray-300 hover:text-manipulator-secondary transition-colors"
-                  >
-                    8 (925) 364-55-81
-                  </a>
-                  <a
-                    href="tel:+89032074092"
-                    className="text-gray-300 hover:text-manipulator-secondary transition-colors"
-                  >
-                    8 (903) 207-40-92
-                  </a>
-                  <a
-                    href="tel:+89299891121"
-                    className="text-gray-300 hover:text-manipulator-secondary transition-colors"
-                  >
-                    8 (929) 989-11-21
-                  </a>
+                <div className="flex flex-col space-y-2">
+                  <div>
+                    <a
+                      href="tel:+89253645581"
+                      className="text-gray-300 hover:text-manipulator-secondary transition-colors"
+                    >
+                      8 (925) 364-55-81
+                    </a>
+                    <div className="flex space-x-3 mt-1">
+                      <a
+                        href="https://wa.me/79253645581"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-green-400 transition-colors"
+                      >
+                        <Icon name="MessageCircle" size={12} className="mr-1" />
+                        <span>WhatsApp</span>
+                      </a>
+                      <a
+                        href="https://t.me/+79253645581"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-blue-400 transition-colors"
+                      >
+                        <Icon name="Send" size={12} className="mr-1" />
+                        <span>Telegram</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <a
+                      href="tel:+89032074092"
+                      className="text-gray-300 hover:text-manipulator-secondary transition-colors"
+                    >
+                      8 (903) 207-40-92
+                    </a>
+                    <div className="flex space-x-3 mt-1">
+                      <a
+                        href="https://wa.me/79032074092"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-green-400 transition-colors"
+                      >
+                        <Icon name="MessageCircle" size={12} className="mr-1" />
+                        <span>WhatsApp</span>
+                      </a>
+                      <a
+                        href="https://t.me/+79032074092"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-blue-400 transition-colors"
+                      >
+                        <Icon name="Send" size={12} className="mr-1" />
+                        <span>Telegram</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div>
+                    <a
+                      href="tel:+89299891121"
+                      className="text-gray-300 hover:text-manipulator-secondary transition-colors"
+                    >
+                      8 (929) 989-11-21
+                    </a>
+                    <div className="flex space-x-3 mt-1">
+                      <a
+                        href="https://wa.me/79299891121"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-green-400 transition-colors"
+                      >
+                        <Icon name="MessageCircle" size={12} className="mr-1" />
+                        <span>WhatsApp</span>
+                      </a>
+                      <a
+                        href="https://t.me/+79299891121"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-xs text-gray-400 hover:text-blue-400 transition-colors"
+                      >
+                        <Icon name="Send" size={12} className="mr-1" />
+                        <span>Telegram</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </li>
               <li className="flex items-center">
@@ -127,36 +195,6 @@ const Footer = () => {
                 >
                   gruzoperevozki.klin@yandex.ru
                 </a>
-              </li>
-              {/* Мессенджеры */}
-              <li className="flex items-start">
-                <Icon
-                  name="MessageSquare"
-                  size={16}
-                  className="text-manipulator-secondary mr-2 mt-1"
-                />
-                <div className="flex flex-col">
-                  <div className="flex space-x-3">
-                    <a
-                      href="https://wa.me/79253645581"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
-                    >
-                      <Icon name="MessageCircle" size={14} className="mr-1" />
-                      <span>WhatsApp</span>
-                    </a>
-                    <a
-                      href="https://t.me/+79253645581"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors"
-                    >
-                      <Icon name="Send" size={14} className="mr-1" />
-                      <span>Telegram</span>
-                    </a>
-                  </div>
-                </div>
               </li>
               <li className="flex items-start">
                 <Icon

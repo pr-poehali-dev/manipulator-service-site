@@ -70,6 +70,26 @@ const MainHeader = () => {
               >
                 <Icon name="Phone" className="mr-2" />8 (925) 364-55-81
               </a>
+              <div className="flex space-x-2 mt-1">
+                <a
+                  href="https://wa.me/79253645581"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center text-xs ${isScrolled ? "text-green-600" : "text-white"} hover:text-green-400`}
+                >
+                  <Icon name="MessageCircle" size={12} className="mr-1" />
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://t.me/+79253645581"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center text-xs ${isScrolled ? "text-blue-500" : "text-white"} hover:text-blue-400`}
+                >
+                  <Icon name="Send" size={12} className="mr-1" />
+                  <span>Telegram</span>
+                </a>
+              </div>
               <a
                 href="tel:+89299891121"
                 className={`flex items-center text-sm ${isScrolled ? "text-manipulator-primary" : "text-white"}`}

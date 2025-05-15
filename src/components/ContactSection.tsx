@@ -27,27 +27,107 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Телефон</h3>
-                  <div className="space-y-1">
-                    <a
-                      href="tel:+89253645581"
-                      className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
-                    >
-                      8 (925) 364-55-81
-                    </a>
-                    <a
-                      href="tel:+89032074092"
-                      className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
-                    >
-                      8 (903) 207-40-92
-                    </a>
-                    <a
-                      href="tel:+89299891121"
-                      className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
-                    >
-                      8 (929) 989-11-21
-                    </a>
+                  <div className="space-y-3">
+                    <div>
+                      <a
+                        href="tel:+89253645581"
+                        className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
+                      >
+                        8 (925) 364-55-81
+                      </a>
+                      <div className="flex mt-1 space-x-3">
+                        <a
+                          href="https://wa.me/79253645581"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-green-600 hover:text-green-700 transition-colors"
+                        >
+                          <Icon
+                            name="MessageCircle"
+                            className="mr-1"
+                            size={14}
+                          />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a
+                          href="https://t.me/+79253645581"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-blue-500 hover:text-blue-600 transition-colors"
+                        >
+                          <Icon name="Send" className="mr-1" size={14} />
+                          <span>Telegram</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <a
+                        href="tel:+89032074092"
+                        className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
+                      >
+                        8 (903) 207-40-92
+                      </a>
+                      <div className="flex mt-1 space-x-3">
+                        <a
+                          href="https://wa.me/79032074092"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-green-600 hover:text-green-700 transition-colors"
+                        >
+                          <Icon
+                            name="MessageCircle"
+                            className="mr-1"
+                            size={14}
+                          />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a
+                          href="https://t.me/+79032074092"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-blue-500 hover:text-blue-600 transition-colors"
+                        >
+                          <Icon name="Send" className="mr-1" size={14} />
+                          <span>Telegram</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div>
+                      <a
+                        href="tel:+89299891121"
+                        className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
+                      >
+                        8 (929) 989-11-21
+                      </a>
+                      <div className="flex mt-1 space-x-3">
+                        <a
+                          href="https://wa.me/79299891121"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-green-600 hover:text-green-700 transition-colors"
+                        >
+                          <Icon
+                            name="MessageCircle"
+                            className="mr-1"
+                            size={14}
+                          />
+                          <span>WhatsApp</span>
+                        </a>
+                        <a
+                          href="https://t.me/+79299891121"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-xs text-blue-500 hover:text-blue-600 transition-colors"
+                        >
+                          <Icon name="Send" className="mr-1" size={14} />
+                          <span>Telegram</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-sm text-manipulator-gray-dark mt-1">
+                  <p className="text-sm text-manipulator-gray-dark mt-3">
                     Ежедневно с 8:00 до 22:00
                   </p>
                 </div>
