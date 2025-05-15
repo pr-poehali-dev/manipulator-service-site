@@ -128,6 +128,36 @@ const Footer = () => {
                   gruzoperevozki.klin@yandex.ru
                 </a>
               </li>
+              {/* Мессенджеры */}
+              <li className="flex items-start">
+                <Icon
+                  name="MessageSquare"
+                  size={16}
+                  className="text-manipulator-secondary mr-2 mt-1"
+                />
+                <div className="flex flex-col">
+                  <div className="flex space-x-3">
+                    <a
+                      href="https://wa.me/79253645581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-300 hover:text-green-400 transition-colors"
+                    >
+                      <Icon name="MessageCircle" size={14} className="mr-1" />
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
+                      href="https://t.me/+79253645581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-300 hover:text-blue-400 transition-colors"
+                    >
+                      <Icon name="Send" size={14} className="mr-1" />
+                      <span>Telegram</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
               <li className="flex items-start">
                 <Icon
                   name="MapPin"

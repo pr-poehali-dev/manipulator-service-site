@@ -53,6 +53,47 @@ const ContactSection = () => {
                 </div>
               </div>
 
+              {/* Мессенджеры */}
+              <div className="flex items-start">
+                <div className="bg-manipulator-primary rounded-full p-3 mr-4 flex-shrink-0">
+                  <Icon name="MessageSquare" className="text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">Мессенджеры</h3>
+                  <div className="flex space-x-4 mt-2">
+                    <a
+                      href="https://wa.me/79253645581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-manipulator-primary hover:text-green-600 transition-colors"
+                    >
+                      <div className="bg-green-500 p-2 rounded-full mr-2">
+                        <Icon
+                          name="MessageCircle"
+                          className="text-white"
+                          size={18}
+                        />
+                      </div>
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
+                      href="https://t.me/+79253645581"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-manipulator-primary hover:text-blue-500 transition-colors"
+                    >
+                      <div className="bg-blue-500 p-2 rounded-full mr-2">
+                        <Icon name="Send" className="text-white" size={18} />
+                      </div>
+                      <span>Telegram</span>
+                    </a>
+                  </div>
+                  <p className="text-sm text-manipulator-gray-dark mt-1">
+                    Быстрая связь через мессенджеры
+                  </p>
+                </div>
+              </div>
+
               <div className="flex items-start">
                 <div className="bg-manipulator-primary rounded-full p-3 mr-4 flex-shrink-0">
                   <Icon name="Mail" className="text-white" />
