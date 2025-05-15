@@ -140,7 +140,7 @@ const Footer = () => {
                   className="text-manipulator-secondary mr-2 mt-1"
                 />
                 <span className="text-gray-300">
-                  г. Москва, ул. Примерная, д. 123
+                  г. Клин, ул. Новоямская, 1А
                 </span>
               </li>
               <li className="flex items-center">

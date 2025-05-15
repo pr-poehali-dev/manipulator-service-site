@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 
@@ -6,39 +5,45 @@ const services = [
   {
     id: 1,
     title: "Перевозка строительных материалов",
-    description: "Доставка кирпича, бетонных блоков, плит и других строительных материалов прямо на объект.",
-    icon: "PackageOpen"
+    description:
+      "Доставка кирпича, бетонных блоков, плит и других строительных материалов прямо на объект.",
+    icon: "PackageOpen",
   },
   {
     id: 2,
     title: "Монтаж и демонтаж конструкций",
-    description: "Установка и демонтаж тяжелых конструкций, рекламных щитов, оборудования с высокой точностью.",
-    icon: "Construction"
+    description:
+      "Установка и демонтаж тяжелых конструкций, рекламных щитов, оборудования с высокой точностью.",
+    icon: "Construction",
   },
   {
     id: 3,
     title: "Погрузка и разгрузка грузов",
-    description: "Быстрая и безопасная погрузка/разгрузка тяжелых и негабаритных грузов в труднодоступных местах.",
-    icon: "CircleDollarSign"
+    description:
+      "Быстрая и безопасная погрузка/разгрузка тяжелых и негабаритных грузов в труднодоступных местах.",
+    icon: "CircleDollarSign",
   },
   {
     id: 4,
     title: "Перевозка спецтехники",
-    description: "Транспортировка мини-экскаваторов, компрессоров, генераторов и другой спецтехники.",
-    icon: "Truck"
+    description:
+      "Транспортировка мини-экскаваторов, компрессоров, генераторов и другой спецтехники.",
+    icon: "Truck",
   },
   {
     id: 5,
     title: "Эвакуация автомобилей",
-    description: "Быстрая эвакуация легковых и грузовых автомобилей с места поломки или аварии.",
-    icon: "Car"
+    description:
+      "Быстрая эвакуация легковых и грузовых автомобилей с места поломки или аварии.",
+    icon: "Car",
   },
   {
     id: 6,
     title: "Аренда манипулятора с оператором",
-    description: "Предоставление манипулятора с опытным оператором для выполнения различных задач.",
-    icon: "UserCheck"
-  }
+    description:
+      "Предоставление манипулятора с опытным оператором для выполнения различных задач.",
+    icon: "UserCheck",
+  },
 ];
 
 const ServicesSection = () => {
@@ -50,7 +55,9 @@ const ServicesSection = () => {
             Наши услуги
           </h2>
           <p className="text-lg text-manipulator-gray-dark max-w-3xl mx-auto">
-            Предоставляем полный спектр услуг по погрузке, перевозке и монтажу с использованием манипуляторов различной грузоподъемности
+            Предоставляем полный спектр услуг по погрузке, перевозке и монтажу с
+            использованием манипуляторов в Клину, Клинском районе с доставкой в
+            Москву и другие направления
           </p>
         </div>
 
@@ -60,7 +67,10 @@ const ServicesSection = () => {
               <CardHeader className="pb-2">
                 <div className="flex items-center">
                   <div className="bg-manipulator-primary rounded-lg p-3 mr-4">
-                    <Icon name={service.icon} className="card-icon text-white transition-colors duration-200" />
+                    <Icon
+                      name={service.icon}
+                      className="card-icon text-white transition-colors duration-200"
+                    />
                   </div>
                   <h3 className="text-xl font-semibold">{service.title}</h3>
                 </div>

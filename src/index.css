@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -22,7 +21,7 @@
     --card: 0 0% 100%;
     --card-foreground: 222.2 47.4% 11.2%;
 
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 215 80% 30%; /* Темно-синий оттенок */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 47.9 95.8% 53.1%;
@@ -80,7 +79,12 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-oswald;
   }
 }
@@ -112,14 +116,16 @@
 }
 
 .hero::before {
-  content: '';
+  content: "";
   @apply absolute inset-0 bg-black bg-opacity-40 z-0;
 }
 
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .animate-on-scroll.animated {
@@ -134,5 +140,5 @@
 
 /* Градиентный фон для секций */
 .bg-gradient-blue {
-  background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
 }

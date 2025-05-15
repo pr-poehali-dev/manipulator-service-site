@@ -1,14 +1,12 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
-import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
-
-export default {
+module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -26,6 +24,12 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        manipulator: {
+          primary: "#0F3784", // Более темный оттенок синего
+          secondary: "#FFC107", // Желтый цвет
+          "gray-dark": "#444444",
+          "gray-light": "#F5F7FA",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -54,17 +58,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Кастомные цвета для сайта манипулятора
-        manipulator: {
-          primary: "#1E3A8A", // Глубокий синий
-          secondary: "#FBBF24", // Желтый
-          accent: "#EF4444", // Красный акцент
-          gray: {
-            light: "#F3F4F6",
-            medium: "#9CA3AF",
-            dark: "#4B5563",
-          },
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -86,25 +79,25 @@ export default {
         },
         fadeIn: {
           from: { opacity: "0", transform: "translateY(10px)" },
-          to: { opacity: "1", transform: "translateY(0)" }
+          to: { opacity: "1", transform: "translateY(0)" },
         },
         slideInFromLeft: {
           from: { opacity: "0", transform: "translateX(-20px)" },
-          to: { opacity: "1", transform: "translateX(0)" }
+          to: { opacity: "1", transform: "translateX(0)" },
         },
         slideInFromRight: {
           from: { opacity: "0", transform: "translateX(20px)" },
-          to: { opacity: "1", transform: "translateX(0)" }
-        }
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out forwards",
         slideInFromLeft: "slideInFromLeft 0.5s ease-out forwards",
-        slideInFromRight: "slideInFromRight 0.5s ease-out forwards"
+        slideInFromRight: "slideInFromRight 0.5s ease-out forwards",
       },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
-} satisfies Config;
+};

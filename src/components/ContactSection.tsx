@@ -70,10 +70,10 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Адрес</h3>
                   <p className="text-manipulator-gray-dark">
-                    г. Москва, ул. Примерная, д. 123
+                    г. Клин, ул. Новоямская, 1А
                   </p>
                   <p className="text-sm text-manipulator-gray-dark mt-1">
-                    Пн-Пт: 9:00-18:00
+                    Пн-Вс: 8:00-22:00
                   </p>
                 </div>
               </div>
