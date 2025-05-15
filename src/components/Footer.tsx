@@ -8,39 +8,27 @@ const Footer = () => {
           {/* Логотип и краткая информация */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-4">
-              <Icon
-                name="Truck"
-                size={32}
-                className="text-manipulator-secondary mr-2"
+              <img
+                src="https://cdn.poehali.dev/files/29880550-5e98-4f68-b09e-9f8cf14b1bf1.jpeg"
+                alt="EVO - транс логотип"
+                className="h-10 mr-3 bg-white p-1 rounded"
               />
-              <span className="font-oswald text-xl font-bold">
-                МАНИПУЛЯТОР-СЕРВИС
-              </span>
+              <span className="font-oswald text-xl font-bold">EVO - транс</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Предоставляем профессиональные услуги манипулятора для любых
               задач: от перевозки строительных материалов до монтажа сложных
               конструкций.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-gray-300 hover:text-manipulator-secondary"
-              >
-                <Icon name="Facebook" size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-manipulator-secondary"
-              >
-                <Icon name="Instagram" size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:text-manipulator-secondary"
-              >
-                <Icon name="Youtube" size={20} />
-              </a>
+
+            {/* QR-код ВКонтакте */}
+            <div className="mt-4">
+              <p className="text-sm text-gray-300 mb-2">Мы ВКонтакте:</p>
+              <img
+                src="https://cdn.poehali.dev/files/fffef046-0e63-407a-a327-6d23c4c5bbb8.jpeg"
+                alt="QR-код ВКонтакте"
+                className="h-32 bg-white p-1 rounded"
+              />
             </div>
           </div>
 
@@ -157,8 +145,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Манипулятор-Сервис. Все права
-            защищены.
+            © {new Date().getFullYear()} EVO - транс. Все права защищены.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a

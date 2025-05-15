@@ -14,12 +14,16 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10 h-full flex flex-col justify-center">
         <div className="max-w-2xl animate-fadeIn">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-            Услуги манипулятора{" "}
-            <span className="text-manipulator-secondary">
-              в Клину и Клинском районе
-            </span>
-          </h1>
+          <div className="flex items-center mb-6">
+            <img
+              src="https://cdn.poehali.dev/files/29880550-5e98-4f68-b09e-9f8cf14b1bf1.jpeg"
+              alt="EVO - транс логотип"
+              className="h-16 mr-4 bg-white/80 p-1 rounded"
+            />
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              EVO - транс
+            </h1>
+          </div>
 
           <p className="text-xl mb-8 text-gray-100">
             Быстрая подача техники, опытные операторы и выгодные цены. Доставка

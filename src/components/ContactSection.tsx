@@ -82,31 +82,15 @@ const ContactSection = () => {
             {/* Социальные сети */}
             <div className="mt-8">
               <h3 className="font-semibold mb-3">Мы в социальных сетях</h3>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-manipulator-primary text-white hover:bg-manipulator-secondary hover:text-manipulator-primary p-3 rounded-full transition-colors"
-                >
-                  <Icon name="Facebook" size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="bg-manipulator-primary text-white hover:bg-manipulator-secondary hover:text-manipulator-primary p-3 rounded-full transition-colors"
-                >
-                  <Icon name="Instagram" size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="bg-manipulator-primary text-white hover:bg-manipulator-secondary hover:text-manipulator-primary p-3 rounded-full transition-colors"
-                >
-                  <Icon name="MessageCircle" size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="bg-manipulator-primary text-white hover:bg-manipulator-secondary hover:text-manipulator-primary p-3 rounded-full transition-colors"
-                >
-                  <Icon name="Youtube" size={20} />
-                </a>
+              <div className="flex flex-col items-start">
+                <p className="text-sm mb-2">
+                  Сканируйте QR-код, чтобы подписаться на нашу группу ВКонтакте:
+                </p>
+                <img
+                  src="https://cdn.poehali.dev/files/fffef046-0e63-407a-a327-6d23c4c5bbb8.jpeg"
+                  alt="QR-код ВКонтакте"
+                  className="h-40 bg-white p-1 rounded"
+                />
               </div>
             </div>
           </div>

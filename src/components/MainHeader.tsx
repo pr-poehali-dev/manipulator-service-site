@@ -21,15 +21,15 @@ const MainHeader = () => {
         <div className="flex items-center justify-between">
           {/* Логотип */}
           <a href="#" className="flex items-center">
-            <Icon
-              name="Truck"
-              size={32}
-              className={`mr-2 ${isScrolled ? "text-manipulator-primary" : "text-manipulator-secondary"}`}
+            <img
+              src="https://cdn.poehali.dev/files/29880550-5e98-4f68-b09e-9f8cf14b1bf1.jpeg"
+              alt="EVO - транс логотип"
+              className="h-10 mr-3"
             />
             <span
               className={`font-oswald text-xl font-bold ${isScrolled ? "text-manipulator-primary" : "text-white"}`}
             >
-              МАНИПУЛЯТОР-СЕРВИС
+              EVO - транс
             </span>
           </a>
 
