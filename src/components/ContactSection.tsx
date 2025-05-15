@@ -52,10 +52,10 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
                   <a
-                    href="mailto:info@manipulator-service.ru"
+                    href="mailto:gruzoperevozki.klin@yandex.ru"
                     className="text-manipulator-primary hover:text-manipulator-secondary transition-colors"
                   >
-                    info@manipulator-service.ru
+                    gruzoperevozki.klin@yandex.ru
                   </a>
                   <p className="text-sm text-manipulator-gray-dark mt-1">
                     Отвечаем в течение 1 часа

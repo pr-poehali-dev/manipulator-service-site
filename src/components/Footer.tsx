@@ -127,10 +127,10 @@ const Footer = () => {
                   className="text-manipulator-secondary mr-2"
                 />
                 <a
-                  href="mailto:info@manipulator-service.ru"
+                  href="mailto:gruzoperevozki.klin@yandex.ru"
                   className="text-gray-300 hover:text-manipulator-secondary transition-colors"
                 >
-                  info@manipulator-service.ru
+                  gruzoperevozki.klin@yandex.ru
                 </a>
               </li>
               <li className="flex items-start">
