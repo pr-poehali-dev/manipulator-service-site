@@ -2,13 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
+import YandexMap from "./YandexMap";
 
 const ContactSection = () => {
   return (
     <section id="contacts" className="section bg-manipulator-gray-light">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Контактная информация */}
+          {/* Контактная информация - оставляем без изменений */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-manipulator-primary">
               Свяжитесь с нами
@@ -133,7 +134,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Мессенджеры */}
               <div className="flex items-start">
                 <div className="bg-manipulator-primary rounded-full p-3 mr-4 flex-shrink-0">
                   <Icon name="MessageSquare" className="text-white" />
@@ -208,7 +208,6 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Социальные сети */}
             <div className="mt-8">
               <h3 className="font-semibold mb-3">Мы в социальных сетях</h3>
               <div className="flex flex-col items-start">
