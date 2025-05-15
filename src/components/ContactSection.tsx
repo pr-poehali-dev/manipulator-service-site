@@ -1,4 +1,3 @@
-
 import ContactInfoBlock from "@/components/contact/ContactInfoBlock";
 import PhoneBlock from "@/components/contact/PhoneBlock";
 import EmailBlock from "@/components/contact/EmailBlock";
@@ -30,50 +29,56 @@ const ContactSection = () => {
             </h2>
             <p className="text-lg text-manipulator-gray-dark mb-8">
               Наши специалисты ответят на все ваши вопросы, рассчитают стоимость
-              и подберут оптимальный манипулятор для ваших задач. Предоставляем услуги по городу Клин и Клинскому району, выполняем работу любой сложности.
+              и подберут оптимальный манипулятор для ваших задач. Предоставляем
+              услуги по городу Клин и Клинскому району, выполняем работу любой
+              сложности.
             </p>
 
             <div className="space-y-6">
               {/* Блок с телефонами */}
               <ContactInfoBlock icon="Phone" title="Телефон">
-                <PhoneBlock 
-                  phones={phones} 
-                  workingHours="Ежедневно с 8:00 до 22:00" 
+                <PhoneBlock
+                  phones={phones}
+                  workingHours="Ежедневно с 8:00 до 22:00"
                 />
               </ContactInfoBlock>
 
               {/* Блок с email */}
               <ContactInfoBlock icon="Mail" title="Email">
-                <EmailBlock 
-                  email="gruzoperevozki.klin@yandex.ru" 
-                  description="Отвечаем в течение 1 часа" 
+                <EmailBlock
+                  email="gruzoperevozki.klin@yandex.ru"
+                  description="Отвечаем в течение 1 часа"
                 />
               </ContactInfoBlock>
 
               {/* Блок с адресом */}
               <ContactInfoBlock icon="MapPin" title="Адрес">
-                <AddressBlock 
-                  address={address} 
-                  workingHours="Пн-Вс: 8:00-22:00" 
+                <AddressBlock
+                  address={address}
+                  workingHours="Пн-Вс: 8:00-22:00"
                 />
               </ContactInfoBlock>
             </div>
 
             {/* Социальные сети */}
-            <SocialNetworksBlock 
-              qrCodeUrl="https://cdn.poehali.dev/files/fffef046-0e63-407a-a327-6d23c4c5bbb8.jpeg" 
-              description="Сканируйте QR-код, чтобы подписаться на нашу группу ВКонтакте:" 
+            <SocialNetworksBlock
+              qrCodeUrl="https://cdn.poehali.dev/files/fffef046-0e63-407a-a327-6d23c4c5bbb8.jpeg"
+              description="Сканируйте QR-код, чтобы подписаться на нашу группу ВКонтакте:"
             />
-            
-            {/* Яндекс Карта */}
-            <MapSection coordinates={coordinates} address={address} />
           </div>
 
           {/* Форма обратной связи */}
-          <ContactForm 
-            title="Заказать звонок" 
-            description="Оставьте свои контактные данные, и наш менеджер свяжется с вами в ближайшее время" 
-          />
+          <div>
+            <ContactForm
+              title="Заказать звонок"
+              description="Оставьте свои контактные данные, и наш менеджер свяжется с вами в ближайшее время"
+            />
+
+            {/* Яндекс Карта - перемещена под форму */}
+            <div className="mt-10">
+              <MapSection coordinates={coordinates} address={address} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
