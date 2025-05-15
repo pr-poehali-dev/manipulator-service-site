@@ -106,6 +106,12 @@ const Footer = () => {
                   >
                     8 (903) 207-40-92
                   </a>
+                  <a
+                    href="tel:+89299891121"
+                    className="text-gray-300 hover:text-manipulator-secondary transition-colors"
+                  >
+                    8 (929) 989-11-21
+                  </a>
                 </div>
               </li>
               <li className="flex items-center">

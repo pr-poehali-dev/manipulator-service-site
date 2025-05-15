@@ -38,6 +38,12 @@ const ContactSection = () => {
                     >
                       8 (903) 207-40-92
                     </a>
+                    <a
+                      href="tel:+89299891121"
+                      className="block text-manipulator-primary hover:text-manipulator-secondary transition-colors"
+                    >
+                      8 (929) 989-11-21
+                    </a>
                   </div>
                   <p className="text-sm text-manipulator-gray-dark mt-1">
                     Ежедневно с 8:00 до 22:00

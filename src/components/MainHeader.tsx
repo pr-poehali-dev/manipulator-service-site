@@ -37,25 +37,25 @@ const MainHeader = () => {
           <nav className="hidden md:flex space-x-6">
             <a
               href="#services"
-              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors`}
+              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors"`}
             >
               Услуги
             </a>
             <a
               href="#benefits"
-              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors`}
+              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors"`}
             >
               Преимущества
             </a>
             <a
               href="#gallery"
-              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors`}
+              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors"`}
             >
               Галерея
             </a>
             <a
               href="#contacts"
-              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors`}
+              className={`nav-link ${isScrolled ? "text-manipulator-gray-dark" : "text-white"} hover:text-manipulator-secondary transition-colors"`}
             >
               Контакты
             </a>
@@ -63,12 +63,20 @@ const MainHeader = () => {
 
           {/* Контактная информация и кнопка */}
           <div className="flex items-center">
-            <a
-              href="tel:+89253645581"
-              className={`hidden md:flex items-center mr-4 ${isScrolled ? "text-manipulator-primary" : "text-white"} font-medium`}
-            >
-              <Icon name="Phone" className="mr-2" />8 (925) 364-55-81
-            </a>
+            <div className="hidden md:flex flex-col items-end mr-4">
+              <a
+                href="tel:+89253645581"
+                className={`flex items-center ${isScrolled ? "text-manipulator-primary" : "text-white"} font-medium`}
+              >
+                <Icon name="Phone" className="mr-2" />8 (925) 364-55-81
+              </a>
+              <a
+                href="tel:+89299891121"
+                className={`flex items-center text-sm ${isScrolled ? "text-manipulator-primary" : "text-white"}`}
+              >
+                8 (929) 989-11-21
+              </a>
+            </div>
             <Button className="bg-manipulator-secondary hover:bg-yellow-500 text-black">
               Заказать звонок
             </Button>

@@ -28,15 +28,15 @@ const galleryImages = [
   },
   {
     id: 5,
-    src: "https://cdn.poehali.dev/files/8c777ccb-b8dd-464e-82d4-1990972c77a5.jpg",
-    alt: "Урал-манипулятор на зимнем строительном участке",
+    src: "https://cdn.poehali.dev/files/0b72624b-c6d8-4be3-aa52-a7238bde96b6.jpeg",
+    alt: "Урал-манипулятор с грузом на бортовой платформе",
     category: "Перевозка",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "Перевозка спецтехники",
-    category: "Перевозка",
+    src: "https://cdn.poehali.dev/files/0f6b232c-74f4-4e5b-a603-b93182cc22fa.jpeg",
+    alt: "Манипулятор выполняет монтажные работы на строительной площадке",
+    category: "Монтаж",
   },
 ];
 
