@@ -1,35 +1,27 @@
 
-import YandexMap from "@/components/YandexMap";
+import React from "react";
 
 interface MapSectionProps {
   coordinates: [number, number];
   address: string;
 }
 
-const MapSection = ({ coordinates, address }: MapSectionProps) => {
+const MapSection: React.FC<MapSectionProps> = ({ coordinates, address }) => {
   return (
-    <div className="mt-8">
-      <h3 className="font-semibold mb-3">Мы на карте</h3>
-      <div className="relative mt-4 h-[400px] rounded-lg overflow-hidden">
-        <YandexMap address={address} coordinates={coordinates} />
-      </div>
-      <div className="mt-4 flex flex-col sm:flex-row gap-2">
-        <a
-          href={`https://yandex.ru/maps/?text=${coordinates[0]},${coordinates[1]}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-4 py-2 bg-manipulator-primary/90 hover:bg-manipulator-primary text-white rounded-md"
-        >
-          Открыть в Яндекс Картах
-        </a>
-        <a
-          href={`https://yandex.ru/maps/?rtext=~${coordinates[0]},${coordinates[1]}&rtt=auto`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-4 py-2 bg-manipulator-secondary hover:bg-yellow-500 text-black rounded-md"
-        >
-          Построить автомобильный маршрут
-        </a>
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      <h3 className="text-xl font-semibold mb-4 text-manipulator-primary">
+        Мы на карте
+      </h3>
+      <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+        <iframe
+          src={`https://yandex.ru/map-widget/v1/?um=constructor%3Aec7ca07f96eded3d7d370c4f1d57e45f42a4d8c4ee6df1d52198e32cb0e6b39a&amp;source=constructor&amp;scroll=false&amp;ll=${coordinates[1]}%2C${coordinates[0]}&amp;z=15`}
+          width="100%"
+          height="100%"
+          title={`Карта: ${address}`}
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+        ></iframe>
       </div>
     </div>
   );
