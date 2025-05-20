@@ -24,10 +24,10 @@ const MainHeader = () => {
             <img
               src="https://cdn.poehali.dev/files/29880550-5e98-4f68-b09e-9f8cf14b1bf1.jpeg"
               alt="EVO - транс логотип"
-              className="h-10 mr-3"
+              className="h-20 mr-3" /* Увеличил размер логотипа в 2 раза: с h-10 на h-20 */
             />
             <span
-              className={`font-oswald text-xl font-bold ${isScrolled ? "text-manipulator-primary" : "text-white"}`}
+              className={`font-oswald text-2xl font-bold ${isScrolled ? "text-manipulator-primary" : "text-white"}`} /* Увеличил размер шрифта с text-xl на text-2xl */
             >
               EVO - транс
             </span>
@@ -66,7 +66,7 @@ const MainHeader = () => {
             <div className="hidden md:flex flex-col items-end mr-4">
               <a
                 href="tel:+89253645581"
-                className={`flex items-center ${isScrolled ? "text-manipulator-primary" : "text-white"} font-medium`}
+                className={`flex items-center ${isScrolled ? "text-manipulator-primary" : "text-white"} font-medium text-lg`} /* Увеличил размер шрифта: добавил text-lg */
               >
                 <Icon name="Phone" className="mr-2" />8 (925) 364-55-81
               </a>
@@ -75,24 +75,26 @@ const MainHeader = () => {
                   href="https://wa.me/79253645581"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center text-xs ${isScrolled ? "text-green-600" : "text-white"} hover:text-green-400`}
+                  className={`flex items-center text-sm ${isScrolled ? "text-green-600" : "text-white"} hover:text-green-400`} /* Увеличил размер шрифта с text-xs на text-sm */
                 >
-                  <Icon name="MessageCircle" size={12} className="mr-1" />
+                  <Icon name="MessageCircle" size={16} className="mr-1" />{" "}
+                  {/* Увеличил размер иконки с 12 на 16 */}
                   <span>WhatsApp</span>
                 </a>
                 <a
                   href="https://t.me/+79253645581"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center text-xs ${isScrolled ? "text-blue-500" : "text-white"} hover:text-blue-400`}
+                  className={`flex items-center text-sm ${isScrolled ? "text-blue-500" : "text-white"} hover:text-blue-400`} /* Увеличил размер шрифта с text-xs на text-sm */
                 >
-                  <Icon name="Send" size={12} className="mr-1" />
+                  <Icon name="Send" size={16} className="mr-1" />{" "}
+                  {/* Увеличил размер иконки с 12 на 16 */}
                   <span>Telegram</span>
                 </a>
               </div>
               <a
                 href="tel:+89299891121"
-                className={`flex items-center text-sm ${isScrolled ? "text-manipulator-primary" : "text-white"}`}
+                className={`flex items-center text-base ${isScrolled ? "text-manipulator-primary" : "text-white"}`} /* Увеличил размер шрифта с text-sm на text-base */
               >
                 8 (929) 989-11-21
               </a>
