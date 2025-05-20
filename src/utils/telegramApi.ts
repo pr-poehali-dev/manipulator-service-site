@@ -1,67 +1,89 @@
 
 /**
- * Утилита для отправки сообщений в Telegram через Bot API
+ * Модуль для работы с Telegram Bot API
+ * Позволяет отправлять сообщения в Telegram через бота
  */
 
-// Константы для работы с Telegram API
-const BOT_TOKEN = "YOUR_BOT_TOKEN"; // Замените на токен вашего бота 
-const CHAT_ID = "YOUR_CHAT_ID"; // Замените на ID вашего чата или группы
+// Константы для API Telegram
+const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN'; // Токен вашего бота (получать у @BotFather)
+const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID'; // ID вашего чата или группы
+const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 /**
- * Отправляет сообщение в Telegram бота
- * @param message - Текст сообщения для отправки
- * @returns Promise<boolean> - Успешность операции
+ * Отправляет сообщение в Telegram
+ * @param message Текст сообщения
+ * @returns Promise<boolean> - результат отправки (успех/неудача)
  */
 export const sendMessageToTelegram = async (message: string): Promise<boolean> => {
-  // URL для API бота Telegram
-  const apiUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-  
   try {
-    // Делаем запрос к API Telegram для отправки сообщения
-    const response = await fetch(apiUrl, {
-      method: "POST",
+    const response = await fetch(TELEGRAM_API_URL, {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chat_id: CHAT_ID,
+        chat_id: TELEGRAM_CHAT_ID,
         text: message,
-        parse_mode: "HTML", // Поддержка HTML форматирования
+        parse_mode: 'HTML', // Позволяет использовать HTML-теги в сообщении
       }),
     });
+
+    const data = await response.json();
     
-    // Проверяем успешность запроса
     if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Telegram API error:", errorData);
+      console.error('Ошибка отправки в Telegram:', data);
       return false;
     }
     
     return true;
   } catch (error) {
-    console.error("Error sending message to Telegram:", error);
+    console.error('Ошибка при отправке сообщения в Telegram:', error);
     return false;
   }
 };
 
 /**
- * Форматирует данные заявки для отправки в Telegram
- * @param formData - Данные формы заявки
- * @returns Отформатированный текст сообщения
+ * Форматирует данные заказа в HTML-сообщение для Telegram
+ * @param name Имя клиента
+ * @param phone Телефон клиента
+ * @param message Сообщение от клиента (опционально)
+ * @returns Отформатированное сообщение с HTML-разметкой
  */
 export const formatOrderMessage = (
-  name: string, 
-  phone: string, 
+  name: string,
+  phone: string,
   message?: string
 ): string => {
-  return `
-🔔 <b>Новая заявка на обратный звонок!</b>
+  // Получаем текущую дату и время
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString('ru-RU');
+  const formattedTime = now.toLocaleTimeString('ru-RU');
+  
+  // Формируем сообщение с HTML-разметкой
+  let telegramMessage = `
+<b>🔔 НОВАЯ ЗАЯВКА НА ЗВОНОК</b>
 
-👤 <b>Имя:</b> ${name}
-📞 <b>Телефон:</b> ${phone}
-${message ? `💬 <b>Сообщение:</b> ${message}` : ""}
+<b>Дата:</b> ${formattedDate}
+<b>Время:</b> ${formattedTime}
 
-📅 <b>Дата:</b> ${new Date().toLocaleString("ru-RU")}
-🌐 <b>Источник:</b> Сайт EVO-транс
+<b>👤 Клиент:</b> ${name}
+<b>📞 Телефон:</b> ${phone}
 `;
+
+  // Добавляем сообщение, если оно есть
+  if (message && message.trim()) {
+    telegramMessage += `
+<b>💬 Сообщение:</b>
+${message}
+`;
+  }
+
+  // Добавляем источник заявки и тег для поиска
+  telegramMessage += `
+<b>📱 Источник:</b> Сайт (форма заказа звонка)
+
+#новая_заявка #сайт
+`;
+
+  return telegramMessage;
 };
