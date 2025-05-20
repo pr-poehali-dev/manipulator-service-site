@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { Footer as NewFooter } from "./footer";
 
 const Footer = () => {
   return (
@@ -242,4 +243,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+// Реэкспорт нового компонента для сохранения совместимости
+export default NewFooter;

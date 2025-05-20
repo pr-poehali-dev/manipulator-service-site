@@ -1,26 +1,22 @@
 
-export interface PhoneData {
-  number: string;
-  formattedNumber: string;
-}
+/**
+ * Типы данных для компонентов футера
+ */
 
-export interface ContactData {
-  phones: PhoneData[];
-  email: string;
-  address: string;
-  workingHours: string;
-}
-
+// Тип для элемента навигации
 export interface NavigationItem {
   title: string;
   href: string;
 }
 
-export interface CopyrightData {
-  year: number;
-  companyName: string;
-  documents: {
-    title: string;
-    href: string;
-  }[];
+// Тип для данных телефона
+export interface PhoneData {
+  number: string;
+  formattedNumber: string;
+}
+
+// Тип для документа (ссылки в копирайте)
+export interface DocumentLink {
+  title: string;
+  href: string;
 }

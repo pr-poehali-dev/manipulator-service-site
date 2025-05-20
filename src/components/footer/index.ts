@@ -1,6 +1,18 @@
 
-export { default as FooterLogo } from './FooterLogo';
-export { default as FooterNavigation } from './FooterNavigation';
-export { default as FooterContacts } from './FooterContacts';
-export { default as FooterCopyright } from './FooterCopyright';
-export { default } from './Footer';
+/**
+ * Экспорт компонентов футера для удобного импорта
+ */
+
+import FooterLogo from "./FooterLogo";
+import FooterNavigation from "./FooterNavigation";
+import FooterContacts from "./FooterContacts";
+import FooterCopyright from "./FooterCopyright";
+import Footer from "./Footer";
+
+export {
+  Footer,
+  FooterLogo,
+  FooterNavigation,
+  FooterContacts,
+  FooterCopyright
+};

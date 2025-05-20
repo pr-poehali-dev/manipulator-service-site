@@ -1,13 +1,11 @@
 
 import React from "react";
+import { DocumentLink } from "./types";
 
 interface FooterCopyrightProps {
   year: number;
   companyName: string;
-  documents: Array<{
-    title: string;
-    href: string;
-  }>;
+  documents: DocumentLink[];
 }
 
 const FooterCopyright: React.FC<FooterCopyrightProps> = ({

@@ -1,7 +1,6 @@
 
 import React, { ReactNode } from "react";
 import Icon from "@/components/ui/icon";
-import { LucideProps } from "lucide-react";
 
 interface ContactInfoBlockProps {
   icon: string;
@@ -16,15 +15,15 @@ const ContactInfoBlock: React.FC<ContactInfoBlockProps> = ({
 }) => {
   return (
     <div className="flex">
-      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-manipulator-primary/10 flex items-center justify-center mr-4">
+      <div className="flex-shrink-0 h-12 w-12 bg-manipulator-primary/10 rounded-full flex items-center justify-center">
         <Icon
           name={icon}
           size={24}
           className="text-manipulator-primary"
         />
       </div>
-      <div>
-        <h3 className="text-lg font-semibold text-manipulator-primary mb-2">
+      <div className="ml-4">
+        <h3 className="text-lg font-semibold mb-2 text-manipulator-primary">
           {title}
         </h3>
         {children}

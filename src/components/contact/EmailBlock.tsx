@@ -3,7 +3,7 @@ import React from "react";
 
 interface EmailBlockProps {
   email: string;
-  description: string;
+  description?: string;
 }
 
 const EmailBlock: React.FC<EmailBlockProps> = ({ email, description }) => {
@@ -15,7 +15,9 @@ const EmailBlock: React.FC<EmailBlockProps> = ({ email, description }) => {
       >
         {email}
       </a>
-      <p className="text-sm text-manipulator-gray-dark mt-1">{description}</p>
+      {description && (
+        <p className="text-sm text-manipulator-gray-dark mt-1">{description}</p>
+      )}
     </div>
   );
 };
