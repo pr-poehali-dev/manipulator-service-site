@@ -74,6 +74,9 @@ const ContactForm = ({ title, description }: ContactFormProps) => {
     setIsSubmitting(true);
 
     try {
+      // Для демонстрации в консоли
+      console.log("Отправка формы:", formData);
+
       const formattedMessage = formatOrderMessage(
         formData.name,
         formData.phone,
@@ -93,6 +96,8 @@ const ContactForm = ({ title, description }: ContactFormProps) => {
         throw new Error("Не удалось отправить заявку");
       }
     } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+
       toast({
         title: "Ошибка отправки",
         description:
@@ -174,7 +179,7 @@ const ContactForm = ({ title, description }: ContactFormProps) => {
         </Button>
 
         <p className="text-xs text-manipulator-gray-dark text-center mt-4">
-          Нажимая кнопку "Отправить заявку", вы соглашаетесь с{" "}
+          Нажимая кнопку "Отправить заявку", вы соглашаетесь с{` `}
           <a
             href="#"
             className="text-manipulator-primary hover:text-manipulator-secondary underline"
