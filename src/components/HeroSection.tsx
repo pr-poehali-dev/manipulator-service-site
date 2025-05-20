@@ -33,20 +33,14 @@ const HeroSection = () => {
               Заказать манипулятор
               <Icon name="ArrowRight" className="ml-2" />
             </a>
-            <a
-              href="#services"
-              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-md font-medium inline-flex items-center justify-center"
-            >
-              Узнать цены
-              <Icon name="ExternalLink" className="ml-2" />
-            </a>
+            {/* Удалена кнопка "Узнать цены" */}
           </div>
         </div>
       </div>
 
       {/* Преимущества в шапке */}
       <div className="container mx-auto px-4 relative z-10 mt-12 md:mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-white bg-opacity-10 p-4 rounded-lg flex items-center">
             <div className="bg-manipulator-secondary p-3 rounded-full mr-4">
               <Icon name="Clock" className="text-black" size={24} />
@@ -78,6 +72,19 @@ const HeroSection = () => {
             <div>
               <h3 className="text-white font-medium">Гарантия качества</h3>
               <p className="text-white text-sm opacity-80">Опытные операторы</p>
+            </div>
+          </div>
+
+          {/* Новый блок о работе с физ. и юр. лицами */}
+          <div className="bg-white bg-opacity-10 p-4 rounded-lg flex items-center">
+            <div className="bg-manipulator-secondary p-3 rounded-full mr-4">
+              <Icon name="FileText" className="text-black" size={24} />
+            </div>
+            <div>
+              <h3 className="text-white font-medium">Работаем официально</h3>
+              <p className="text-white text-sm opacity-80">
+                Физ. и юр. лица, договоры
+              </p>
             </div>
           </div>
         </div>
