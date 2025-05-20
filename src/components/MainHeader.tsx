@@ -90,11 +90,12 @@ const MainHeader = () => {
                   <span>Telegram</span>
                 </a>
               </div>
-              {/* Удален второй телефон 8 (929) 989-11-21 */}
             </div>
-            <Button className="bg-manipulator-secondary hover:bg-yellow-500 text-black">
-              Заказать звонок
-            </Button>
+            <a href="#contacts">
+              <Button className="bg-manipulator-secondary hover:bg-yellow-500 text-black">
+                Заказать звонок
+              </Button>
+            </a>
           </div>
         </div>
       </div>
