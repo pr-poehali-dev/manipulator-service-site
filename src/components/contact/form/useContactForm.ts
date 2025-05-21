@@ -1,4 +1,3 @@
-
 import { useState, ChangeEvent, FormEvent } from "react";
 import { toast } from "@/hooks/use-toast";
 import { sendMessageToTelegram, formatOrderMessage } from "@/utils/telegramApi";
@@ -21,7 +20,7 @@ export const useContactForm = () => {
    * Обработчик изменения полей формы
    */
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -44,12 +43,12 @@ export const useContactForm = () => {
 
     if (!formData.phone.trim()) {
       newErrors.phone = "Поле обязательно для заполнения";
-    } else if (
-      !/^(\+7|7|8)?[\s\-]?\(?[9][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(
-        formData.phone
-      )
-    ) {
-      newErrors.phone = "Введите корректный номер телефона";
+    } else {
+      // Более простая проверка для номера телефона
+      const phoneNumber = formData.phone.replace(/\D/g, "");
+      if (phoneNumber.length < 10) {
+        newErrors.phone = "Введите корректный номер телефона";
+      }
     }
 
     setErrors(newErrors);
@@ -82,7 +81,7 @@ export const useContactForm = () => {
       const formattedMessage = formatOrderMessage(
         formData.name,
         formData.phone,
-        formData.message
+        formData.message,
       );
 
       // Отправляем сообщение в Telegram

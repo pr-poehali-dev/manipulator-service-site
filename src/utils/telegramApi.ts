@@ -4,8 +4,8 @@
  */
 
 // Константы для API Telegram
-const TELEGRAM_BOT_TOKEN = "7484298108:AAGjtqjpZNKz0VJwbKMvUu1QXwyrGJC6psw"; // Токен вашего бота
-const TELEGRAM_CHAT_ID = "79032074092"; // ID чата (ваш номер телефона)
+const TELEGRAM_BOT_TOKEN = "7484298108:AAGjtqjpZNKz0VJwbKMvUu1QXwyrGJC6psw"; // Токен бота
+const TELEGRAM_CHAT_ID = "79032074092"; // ID вашего чата или группы (замените на свой)
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 /**
@@ -17,7 +17,11 @@ export const sendMessageToTelegram = async (
   message: string,
 ): Promise<boolean> => {
   try {
-    console.log("Отправка сообщения в Telegram...", { message });
+    console.log("Отправка сообщения в Telegram:", {
+      url: TELEGRAM_API_URL,
+      chat_id: TELEGRAM_CHAT_ID,
+      message: message.substring(0, 50) + "...", // логируем сокращенную версию сообщения
+    });
 
     const response = await fetch(TELEGRAM_API_URL, {
       method: "POST",
@@ -38,7 +42,7 @@ export const sendMessageToTelegram = async (
       return false;
     }
 
-    console.log("Сообщение успешно отправлено в Telegram", data);
+    console.log("Успешная отправка в Telegram, ответ:", data);
     return true;
   } catch (error) {
     console.error("Ошибка при отправке сообщения в Telegram:", error);
