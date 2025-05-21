@@ -74,15 +74,18 @@ const ContactForm = ({ title, description }: ContactFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // Для демонстрации в консоли
+      // Логируем данные формы
       console.log("Отправка формы:", formData);
 
+      // Форматируем сообщение для Telegram
       const formattedMessage = formatOrderMessage(
         formData.name,
         formData.phone,
         formData.message,
       );
 
+      // Отправляем сообщение в Telegram
+      console.log("Подготовленное сообщение:", formattedMessage);
       const success = await sendMessageToTelegram(formattedMessage);
 
       if (success) {
@@ -91,9 +94,10 @@ const ContactForm = ({ title, description }: ContactFormProps) => {
           description: "Наш менеджер свяжется с вами в ближайшее время",
         });
 
+        // Очищаем форму после успешной отправки
         setFormData({ name: "", phone: "", message: "" });
       } else {
-        throw new Error("Не удалось отправить заявку");
+        throw new Error("Не удалось отправить заявку в Telegram");
       }
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
