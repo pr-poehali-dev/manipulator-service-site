@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   FormInput,
@@ -19,7 +18,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   onSubmitSuccess,
 }) => {
   // Используем хук для управления состоянием формы
-  const { formData, errors, isSubmitting, handleChange, submitForm } = useContactForm();
+  const { formData, errors, isSubmitting, handleChange, submitForm } =
+    useContactForm();
 
   // Обработчик отправки формы с поддержкой колбэка успеха
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,6 +67,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
         {/* Кнопка отправки формы */}
         <SubmitButton isSubmitting={isSubmitting} />
+
+        {/* Дополнительная информация */}
+        <p className="text-xs text-gray-500 mt-2">
+          Данные формы будут отправлены на email:{" "}
+          <strong>gruzoperevozki.klin@yandex.ru</strong>
+        </p>
 
         {/* Согласие с политикой конфиденциальности */}
         <PrivacyPolicy />

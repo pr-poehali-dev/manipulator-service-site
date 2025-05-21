@@ -1,6 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 import { toast } from "@/hooks/use-toast";
-import { sendMessageToTelegram, formatOrderMessage } from "@/utils/telegramApi";
+import { sendFormDataToEmail, formatOrderMessage } from "@/utils/emailApi";
 import { ContactFormData, ContactFormErrors } from "./types";
 
 /**
@@ -56,7 +56,7 @@ export const useContactForm = () => {
   };
 
   /**
-   * Отправка формы в Telegram
+   * Отправка формы на email
    */
   const submitForm = async (e: FormEvent) => {
     e.preventDefault();
@@ -77,16 +77,20 @@ export const useContactForm = () => {
       // Логируем данные формы
       console.log("Отправка формы:", formData);
 
-      // Форматируем сообщение для Telegram
+      // Форматируем сообщение
       const formattedMessage = formatOrderMessage(
         formData.name,
         formData.phone,
         formData.message,
       );
 
-      // Отправляем сообщение в Telegram
+      // Отправляем данные на email
       console.log("Подготовленное сообщение:", formattedMessage);
-      const success = await sendMessageToTelegram(formattedMessage);
+      const success = await sendFormDataToEmail(
+        formData.name,
+        formData.phone,
+        formData.message,
+      );
 
       if (success) {
         toast({
@@ -98,7 +102,7 @@ export const useContactForm = () => {
         setFormData({ name: "", phone: "", message: "" });
         return true;
       } else {
-        throw new Error("Не удалось отправить заявку в Telegram");
+        throw new Error("Не удалось отправить заявку на email");
       }
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);

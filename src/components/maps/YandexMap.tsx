@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useYandexMap } from "./useYandexMap";
 import MapLoader from "./MapLoader";
 import MapError from "./MapError";
-import RouteBuilder from "./RouteBuilder";
 import { YandexMapProps } from "./types";
-import { DEFAULT_MOSCOW_LOCATION } from "./config";
 import "./MapStyles.css";
 
 /**
- * Компонент Яндекс.Карты с отображением местоположения и возможностью построения маршрута
+ * Компонент Яндекс.Карты с отображением местоположения
  *
  * @example
  * <YandexMap
@@ -25,18 +23,8 @@ const YandexMap: React.FC<YandexMapProps> = ({
   additionalInfo = "Тел: 8 (903) 207-40-92",
   mapOptions,
 }) => {
-  const [customRouteMode, setCustomRouteMode] = useState(false);
-
   // Используем наш кастомный хук для инициализации карты
-  const {
-    map,
-    ymaps,
-    isLoaded,
-    error,
-    routePoints,
-    enableCustomRouteMode,
-    clearCustomRoute,
-  } = useYandexMap({
+  const { isLoaded, error } = useYandexMap({
     coordinates,
     address,
     city,
@@ -57,20 +45,6 @@ const YandexMap: React.FC<YandexMapProps> = ({
     );
   }
 
-  // Обработчики для управления режимом построения маршрута
-  const handleEnableCustomRoutes = () => {
-    setCustomRouteMode(true);
-    enableCustomRouteMode();
-  };
-
-  const handleDisableCustomRoutes = () => {
-    setCustomRouteMode(false);
-  };
-
-  const handleClearRoute = () => {
-    clearCustomRoute();
-  };
-
   return (
     <div className="yandex-map-container relative">
       {/* Контейнер для карты */}
@@ -79,19 +53,6 @@ const YandexMap: React.FC<YandexMapProps> = ({
         className="w-full h-[400px] rounded-lg shadow-md"
         aria-label={`Карта с расположением: ${city}, ${address}`}
       />
-
-      {/* Элементы управления пользовательскими маршрутами */}
-      {map && ymaps && (
-        <RouteBuilder
-          onClearRoute={handleClearRoute}
-          onDisableCustomRoutes={
-            customRouteMode
-              ? handleDisableCustomRoutes
-              : handleEnableCustomRoutes
-          }
-          isActive={customRouteMode}
-        />
-      )}
     </div>
   );
 };
