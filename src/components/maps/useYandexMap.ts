@@ -86,18 +86,17 @@ export function useYandexMap({
             : [],
         });
 
-        // Добавляем поиск, если требуется
-        if (mapOptions.enableSearch) {
-          map.controls.add(
-            new window.ymaps.control.SearchControl({
-              options: {
-                provider: "yandex#search",
-                size: "small",
-                float: "right",
-              },
-            }),
-          );
-        }
+        // Убираем поиск, чтобы не было надписи "города и улицы, дома"
+        // Эта строка была закомментирована или удалена:
+        // if (mapOptions.enableSearch) {
+        //   map.controls.add(new window.ymaps.control.SearchControl({
+        //     options: {
+        //       provider: 'yandex#search',
+        //       size: 'small',
+        //       float: 'right'
+        //     }
+        //   }));
+        // }
 
         // Создаем и добавляем метку
         const placemark = new window.ymaps.Placemark(

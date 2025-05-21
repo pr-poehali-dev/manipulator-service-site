@@ -1,19 +1,18 @@
-
 /**
  * Конфигурация для работы с Яндекс.Картами
  */
 
 // API ключ для Яндекс.Карт (необходимо заменить на реальный ключ)
-export const YANDEX_MAPS_API_KEY = 'YOUR_YANDEX_MAPS_API_KEY';
+export const YANDEX_MAPS_API_KEY = "YOUR_YANDEX_MAPS_API_KEY";
 
 // Настройки загрузки API
 export const YANDEX_MAPS_API_CONFIG = {
   apiUrl: `https://api-maps.yandex.ru/2.1/`,
   params: {
     apikey: YANDEX_MAPS_API_KEY,
-    lang: 'ru_RU'
+    lang: "ru_RU",
   },
-  scriptId: 'yandex-map-script'
+  scriptId: "yandex-map-script",
 };
 
 // Геолокация Москвы для использования по умолчанию
@@ -24,21 +23,21 @@ export const MARKER_PRESETS = {
   default: "islands#blueDeliveryCircleIcon",
   delivery: "islands#blueDeliveryCircleIcon",
   gas: "islands#blueGasStationCircleIcon",
-  shop: "islands#blueShoppingCircleIcon"
+  shop: "islands#blueShoppingCircleIcon",
 };
 
 // Дефолтные настройки карты
 export const DEFAULT_MAP_OPTIONS = {
   zoom: 15,
   showControls: true,
-  enableSearch: true,
-  markerColor: "#1e3a8a"
+  enableSearch: false, // Изменил на false чтобы не было поиска по умолчанию
+  markerColor: "#1e3a8a",
 };
 
 // ID элементов, используемых при интеграции
 export const MAP_DOM_IDS = {
-  scriptId: 'yandex-map-script',
-  mapContainerId: 'ymap-container',
-  routeButtonId: 'ymap-route-button',
-  resetButtonId: 'ymap-reset-button'
+  scriptId: "yandex-map-script",
+  mapContainerId: "ymap-container",
+  routeButtonId: "ymap-route-button",
+  resetButtonId: "ymap-reset-button",
 };
