@@ -1,25 +1,39 @@
 
 import React from "react";
+import YandexMap from "../YandexMap";
 
 interface MapSectionProps {
   coordinates: [number, number];
   address: string;
+  city?: string;
 }
 
-const MapSection: React.FC<MapSectionProps> = ({ coordinates, address }) => {
+const MapSection: React.FC<MapSectionProps> = ({ 
+  coordinates, 
+  address, 
+  city = "Клин" 
+}) => {
   return (
-    <div className="rounded-lg overflow-hidden shadow-md">
-      <h3 className="text-lg font-semibold mb-3 text-manipulator-primary">
+    <div className="rounded-lg overflow-hidden shadow-md bg-white p-4">
+      <h3 className="text-xl font-semibold mb-3 text-manipulator-primary">
         Мы на карте
       </h3>
-      <div className="h-[300px] rounded-lg overflow-hidden">
-        <iframe
-          src={`https://yandex.ru/map-widget/v1/?um=constructor%3Aab61598e7b61d77f4d9adcb84770f7a7c8ca97cd8beaa304c3d7c52ce8088c50&amp;source=constructor&amp;scroll=false&amp;ll=${coordinates[1]}%2C${coordinates[0]}&amp;z=15`}
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          title={`Адрес: ${address}`}
-        ></iframe>
+      <p className="text-manipulator-gray-dark mb-4">
+        {city}, {address}
+      </p>
+      <div className="h-[400px] rounded-lg overflow-hidden">
+        <YandexMap 
+          coordinates={coordinates} 
+          address={address}
+          city={city}
+        />
+      </div>
+      <div className="mt-4 text-sm text-manipulator-gray-dark">
+        <p className="italic">
+          * Вы можете построить маршрут до нашего офиса прямо на карте, 
+          нажав кнопку "Построить маршрут" и изменять масштаб карты с 
+          помощью элементов управления.
+        </p>
       </div>
     </div>
   );
