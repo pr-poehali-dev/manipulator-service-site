@@ -6,7 +6,7 @@ interface FooterLogoProps {
   companyName: string;
   description: string;
   qrCodeUrl: string;
-  qrCodeDescription: string;
+  qrCodeDescription?: string;
 }
 
 const FooterLogo: React.FC<FooterLogoProps> = ({
@@ -14,7 +14,7 @@ const FooterLogo: React.FC<FooterLogoProps> = ({
   companyName,
   description,
   qrCodeUrl,
-  qrCodeDescription,
+  qrCodeDescription = "Мы ВКонтакте:",
 }) => {
   return (
     <div className="md:col-span-2">
@@ -33,7 +33,7 @@ const FooterLogo: React.FC<FooterLogoProps> = ({
         <p className="text-sm text-gray-300 mb-2">{qrCodeDescription}</p>
         <img
           src={qrCodeUrl}
-          alt="QR-код"
+          alt="QR-код для социальной сети"
           className="h-32 bg-white p-1 rounded"
         />
       </div>

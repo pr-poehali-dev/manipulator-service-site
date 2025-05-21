@@ -14,7 +14,7 @@ export {
   FooterLogo,
   FooterNavigation,
   FooterContacts,
-  FooterCopyright,
+  FooterCopyright
 };
 
 // Экспорт по умолчанию для обратной совместимости

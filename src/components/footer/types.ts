@@ -34,5 +34,12 @@ export interface FooterProps {
   logoUrl?: string;
   description?: string;
   qrCodeUrl?: string;
+  qrCodeDescription?: string;
   year?: number;
+  phones?: PhoneData[];
+  navigationItems?: NavigationItem[];
+  email?: string;
+  address?: string;
+  workingHours?: string;
+  documents?: DocumentLink[];
 }

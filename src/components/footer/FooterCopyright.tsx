@@ -8,9 +8,6 @@ interface FooterCopyrightProps {
   documents: DocumentLink[];
 }
 
-/**
- * Компонент нижней части футера с копирайтом и ссылками на документы
- */
 const FooterCopyright: React.FC<FooterCopyrightProps> = ({
   year,
   companyName,

@@ -1,10 +1,6 @@
 
 import React from "react";
-
-interface NavigationItem {
-  title: string;
-  href: string;
-}
+import { NavigationItem } from "./types";
 
 interface FooterNavigationProps {
   title: string;
