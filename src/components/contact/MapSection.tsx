@@ -1,6 +1,5 @@
-
 import React from "react";
-import YandexMap from "../YandexMap";
+import { YandexMap } from "../maps";
 
 interface MapSectionProps {
   coordinates: [number, number];
@@ -8,10 +7,10 @@ interface MapSectionProps {
   city?: string;
 }
 
-const MapSection: React.FC<MapSectionProps> = ({ 
-  coordinates, 
-  address, 
-  city = "Клин" 
+const MapSection: React.FC<MapSectionProps> = ({
+  coordinates,
+  address,
+  city = "Клин",
 }) => {
   return (
     <div className="rounded-lg overflow-hidden shadow-md bg-white p-4">
@@ -22,17 +21,24 @@ const MapSection: React.FC<MapSectionProps> = ({
         {city}, {address}
       </p>
       <div className="h-[400px] rounded-lg overflow-hidden">
-        <YandexMap 
-          coordinates={coordinates} 
+        <YandexMap
+          coordinates={coordinates}
           address={address}
           city={city}
+          additionalInfo="Тел: 8 (903) 207-40-92"
+          mapOptions={{
+            zoom: 15,
+            showControls: true,
+            enableSearch: true,
+            markerColor: "#1e3a8a",
+          }}
         />
       </div>
       <div className="mt-4 text-sm text-manipulator-gray-dark">
         <p className="italic">
-          * Вы можете построить маршрут до нашего офиса прямо на карте, 
-          нажав кнопку "Построить маршрут" и изменять масштаб карты с 
-          помощью элементов управления.
+          * Вы можете построить маршрут до нашего офиса прямо на карте, нажав
+          кнопку "Построить маршрут" и изменять масштаб карты с помощью
+          элементов управления.
         </p>
       </div>
     </div>
