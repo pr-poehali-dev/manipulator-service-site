@@ -4,7 +4,7 @@
  */
 
 // Константы для API Telegram
-const TELEGRAM_BOT_TOKEN = "6989748159:AAE2Cp1LRbWfyxlXv9RKdoQpAFgRYPTXZxI"; // Замените на токен вашего бота
+const TELEGRAM_BOT_TOKEN = "7484298108:AAGjtqjpZNKz0VJwbKMvUu1QXwyrGJC6psw"; // Токен вашего бота
 const TELEGRAM_CHAT_ID = "79032074092"; // ID чата (ваш номер телефона)
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
