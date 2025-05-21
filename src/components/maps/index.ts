@@ -1,15 +1,17 @@
 
-// Типы
-export * from './types';
+/**
+ * Индексный файл для компонентов работы с Яндекс.Картами
+ */
 
-// Конфигурация
-export * from './config';
+// Экспорт основного компонента карты
+export { default as YandexMap } from "./YandexMap";
 
-// Хуки
-export { useYandexMap } from './useYandexMap';
+// Экспорт вспомогательных компонентов
+export { default as MapLoader } from "./MapLoader";
+export { default as MapError } from "./MapError";
+export { default as MapControls } from "./MapControls";
 
-// Компоненты
-export { default as YandexMap } from './YandexMap';
-export { default as MapControls } from './MapControls';
-export { default as MapError } from './MapError';
-export { default as MapLoader } from './MapLoader';
+// Экспорт хука и конфигурации
+export { useYandexMap } from "./useYandexMap";
+export * from "./config";
+export * from "./types";

@@ -26,12 +26,6 @@ const MapSection: React.FC<MapSectionProps> = ({
           address={address}
           city={city}
           additionalInfo="Тел: 8 (903) 207-40-92"
-          mapOptions={{
-            zoom: 15,
-            showControls: true,
-            enableSearch: true,
-            markerColor: "#1e3a8a",
-          }}
         />
       </div>
       <div className="mt-4 text-sm text-manipulator-gray-dark">

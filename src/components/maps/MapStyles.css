@@ -1,0 +1,61 @@
+
+/* Стили для элементов управления Яндекс.Картой */
+
+.yandex-map-container {
+  position: relative;
+  width: 100%;
+}
+
+.map-custom-buttons {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.route-btn {
+  padding: 8px 12px;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.2s;
+}
+
+.route-btn:hover {
+  background-color: #2563eb;
+}
+
+.route-btn:active {
+  background-color: #1e40af;
+}
+
+.route-btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Стили для доступности */
+@media (prefers-reduced-motion: reduce) {
+  .route-btn {
+    transition: none;
+  }
+}
+
+/* Поддержка темной темы */
+@media (prefers-color-scheme: dark) {
+  .route-btn {
+    background-color: #2563eb;
+  }
+  
+  .route-btn:hover {
+    background-color: #3b82f6;
+  }
+}

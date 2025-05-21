@@ -1,20 +1,26 @@
 
-import React, { useState } from 'react';
-import { useYandexMap } from './useYandexMap';
-import MapControls from './MapControls';
-import MapError from './MapError';
-import MapLoader from './MapLoader';
-import MapStyles from './MapStyles';
-import { YandexMapProps } from './types';
-import { DEFAULT_MOSCOW_LOCATION } from './config';
+import React, { useState } from "react";
+import { useYandexMap } from "./useYandexMap";
+import MapLoader from "./MapLoader";
+import MapError from "./MapError";
+import MapControls from "./MapControls";
+import { YandexMapProps } from "./types";
+import { DEFAULT_MOSCOW_LOCATION } from "./config";
+import "./MapStyles.css";
 
 /**
- * Компонент для отображения Яндекс.Карты
- * Разделен на логические части для улучшения поддерживаемости
+ * Компонент Яндекс.Карты с отображением местоположения и возможностью построения маршрута
+ * 
+ * @example
+ * <YandexMap 
+ *   coordinates={[55.751244, 37.618423]} 
+ *   address="ул. Тверская, 1" 
+ *   city="Москва" 
+ * />
  */
 const YandexMap: React.FC<YandexMapProps> = ({
-  address,
   coordinates,
+  address,
   city = "Клин",
   balloonTitle = "Наша компания",
   additionalInfo = "Тел: 8 (903) 207-40-92",
@@ -22,7 +28,7 @@ const YandexMap: React.FC<YandexMapProps> = ({
 }) => {
   const [routeBuilt, setRouteBuilt] = useState(false);
   
-  // Используем хук для работы с картой
+  // Используем наш кастомный хук для инициализации карты
   const { map, ymaps, isLoaded, userPosition, error } = useYandexMap({
     coordinates,
     address,
@@ -32,38 +38,41 @@ const YandexMap: React.FC<YandexMapProps> = ({
     balloonTitle
   });
 
-  // Обработка ошибок загрузки карты
+  // Показываем состояние загрузки
+  if (!isLoaded) {
+    return <MapLoader text="Загрузка карты..." />;
+  }
+
+  // Показываем ошибку, если она возникла
   if (error) {
-    return <MapError error={error} />;
+    return (
+      <MapError 
+        message="Не удалось загрузить карту"
+        details={error.message}
+      />
+    );
   }
 
-  // Отображаем лоадер во время загрузки API
-  if (!isLoaded || !map) {
-    return <MapLoader />;
-  }
-
-  // Рендерим карту
   return (
-    <div className="relative">
+    <div className="yandex-map-container relative">
       {/* Контейнер для карты */}
       <div 
-        id="ymap-container"
+        id="ymap-container" 
         className="w-full h-[400px] rounded-lg shadow-md"
-        aria-label="Карта с местоположением компании"
+        aria-label={`Карта с расположением: ${city}, ${address}`}
       />
       
       {/* Элементы управления картой */}
-      <MapControls
-        map={map}
-        ymaps={ymaps}
-        coordinates={coordinates}
-        userPosition={userPosition}
-        defaultLocation={DEFAULT_MOSCOW_LOCATION}
-        onRouteBuilt={setRouteBuilt}
-      />
-      
-      {/* Стили для карты */}
-      <MapStyles />
+      {map && ymaps && (
+        <MapControls
+          map={map}
+          ymaps={ymaps}
+          coordinates={coordinates}
+          userPosition={userPosition}
+          defaultLocation={DEFAULT_MOSCOW_LOCATION}
+          onRouteBuilt={setRouteBuilt}
+        />
+      )}
     </div>
   );
 };

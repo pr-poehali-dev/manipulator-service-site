@@ -2,42 +2,43 @@
 import React from 'react';
 
 interface MapErrorProps {
-  error: Error | null;
-  fallbackText?: string;
+  message: string;
+  details?: string;
 }
 
 /**
- * Компонент для отображения ошибок при работе с картой
+ * Компонент для отображения ошибок при загрузке карты
  */
 const MapError: React.FC<MapErrorProps> = ({ 
-  error, 
-  fallbackText = "Не удалось загрузить карту. Пожалуйста, проверьте подключение к интернету или попробуйте позже." 
+  message, 
+  details 
 }) => {
-  if (!error) return null;
-  
   return (
-    <div className="flex flex-col items-center justify-center h-[400px] bg-gray-100 rounded-lg border border-gray-200 p-6 text-center">
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        fill="none" 
-        viewBox="0 0 24 24" 
-        stroke="currentColor" 
-        className="w-12 h-12 text-red-500 mb-4"
-      >
-        <path 
+    <div className="flex flex-col items-center justify-center h-[400px] bg-gray-50 rounded-lg border border-red-200">
+      <div className="text-red-500 mb-2">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="48" 
+          height="48" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
           strokeLinecap="round" 
-          strokeLinejoin="round" 
-          strokeWidth={2} 
-          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" 
-        />
-      </svg>
-      <h3 className="text-lg font-semibold text-gray-800 mb-2">Ошибка загрузки карты</h3>
-      <p className="text-gray-600 mb-4">{error.message || fallbackText}</p>
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+      </div>
+      <h3 className="text-lg font-medium text-gray-900 mb-1">{message}</h3>
+      {details && <p className="text-sm text-gray-500">{details}</p>}
       <button 
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
         onClick={() => window.location.reload()}
-        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
       >
-        Попробовать снова
+        Перезагрузить страницу
       </button>
     </div>
   );

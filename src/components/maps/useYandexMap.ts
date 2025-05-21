@@ -1,13 +1,14 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   UseYandexMapParams, 
-  MapInstance,
+  MapInstance 
+} from './types';
+import { 
   DEFAULT_MAP_OPTIONS,
   YANDEX_MAPS_API_CONFIG,
-  DEFAULT_MOSCOW_LOCATION,
   MARKER_PRESETS
-} from './';
+} from './config';
 
 /**
  * Хук для работы с Яндекс.Картами
