@@ -1,4 +1,3 @@
-
 /**
  * Индексный файл для компонентов работы с Яндекс.Картами
  */
@@ -10,6 +9,7 @@ export { default as YandexMap } from "./YandexMap";
 export { default as MapLoader } from "./MapLoader";
 export { default as MapError } from "./MapError";
 export { default as MapControls } from "./MapControls";
+export { default as RouteBuilder } from "./RouteBuilder";
 
 // Экспорт хука и конфигурации
 export { useYandexMap } from "./useYandexMap";

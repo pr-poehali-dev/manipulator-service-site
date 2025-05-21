@@ -1,4 +1,3 @@
-
 /**
  * Типы для работы с Яндекс картами
  */
@@ -21,6 +20,8 @@ export interface YandexMapProps {
   additionalInfo?: string;
   /** Опции карты */
   mapOptions?: YandexMapOptions;
+  /** Разрешить пользовательские маршруты */
+  allowCustomRoutes?: boolean;
 }
 
 export interface YandexMapOptions {
@@ -47,6 +48,13 @@ export interface UseYandexMapParams {
   additionalInfo?: string;
   /** Заголовок балуна */
   balloonTitle?: string;
+  /** Разрешить пользовательские маршруты */
+  allowCustomRoutes?: boolean;
+}
+
+export interface RoutePoint {
+  type: "A" | "B";
+  coordinates: [number, number];
 }
 
 export interface MapInstance {
@@ -55,6 +63,16 @@ export interface MapInstance {
   isLoaded: boolean;
   userPosition: [number, number] | null;
   error: Error | null;
+  routePoints: RoutePoint[];
+  enableCustomRouteMode: () => void;
+  clearCustomRoute: () => void;
+}
+
+export interface UserRoutePoint {
+  id: string;
+  coords: [number, number];
+  placemark: any;
+  type: "start" | "end";
 }
 
 // Для Typescript
